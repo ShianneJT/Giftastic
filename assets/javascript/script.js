@@ -11,9 +11,84 @@
 // Then make a function call that takes each topic in the array and remakes the buttons on the page.
 $(document).ready(function() {
 
-    var topics = ['Animal Crossing', 'Red Dead Redemption', 'Stardew Valley', 'DOOM Eternal'];
-    var gifButton;
+    var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'Super Mario', 'DOOM Eternal'];
 
+
+    function renderButtons() {
+        $('#buttonsView').empty();
+        for (var i = 0; i < topics.length; i++) {
+            var button = $('<button>');
+            button.text(topics[i]);
+            button.addClass('gifBtn');
+            button.attr('data-name', topics[i]);
+            $('#buttonsView').append(button);
+        };
+    }; // End of renderButtons()
+
+    renderButtons()
+
+    $('.gifBtn').click(function() {
+        $('#gifsView').empty();
+        var videoGame = $(this).attr('data-name');
+        var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + videoGame + '&api_key=LO0wlQcDyKguVdmxVhn7CHeqlHgGIazS&limit=10';
+
+        $.ajax({
+            url: queryURL,
+            method: 'GET'
+        }).then(function(response) {
+            var results = response.data;
+
+            for (var i = 0; i < results.length; i++) {
+                var gifDiv = $('<div>');
+                var gameGif = $('<img>');
+                gameGif.attr('src', results[i].images.downsized_still.url);
+                gameGif.attr('data-state', 'still');
+                gameGif.attr('data-still', results[i].images.downsized_still.url);
+                gameGif.attr('data-animated', results[i].images.downsized.url);
+                gameGif.addClass('gif');
+                gifDiv.append(gameGif);
+
+                var rating = results[i].rating;
+                var ratingText = $('<p>').text(`Rating: ${rating}`);
+                gifDiv.append(ratingText);
+    
+                $('#gifsView').prepend(gifDiv);
+            };
+        });
+    }); // End of $('.gifBtn').click(function()
+
+    $('.gif').click(function() {
+        console.log("stop it");
+        var state = $(this).attr('data-state');
+        var still = $(this).attr('data-still');
+        var animate = $(this).attr('data-animated');
+
+        if (state == 'still') {
+            $(this).attr('src', animate);
+            $(this).attr('data-state', 'animate')
+        } else if (state = 'animate') {
+            $(this).attr('src', still);
+            $(this).attr('data-state', 'still')
+        }
+    });
+
+
+
+
+
+
+
+
+}); // End of $(document).ready(function()
+
+
+
+
+
+
+
+
+/*
     function renderButtons() {
         $('#buttonsView').empty();
         for (var i = 0; i < topics.length; i++) {
@@ -24,8 +99,9 @@ $(document).ready(function() {
             $('#buttonsView').append(gifButton);
         }
     };
+    */
 
-    renderButtons()
+    /*
 
     $('.gifBtn').click(function() {
         var videoGame = $(this).attr('data-name');
@@ -51,9 +127,9 @@ $(document).ready(function() {
     });
 
 
+*/
 
 
-}); // End of $(document).ready(function()
 
 
 
