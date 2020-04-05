@@ -54,9 +54,26 @@ $(document).ready(function() {
     
                 $('#gifsView').prepend(gifDiv);
             };
+            
+            $('.gif').click(function() {
+                console.log("stop it");
+                var state = $(this).attr('data-state');
+                var still = $(this).attr('data-still');
+                var animate = $(this).attr('data-animated');
+        
+                if (state == 'still') {
+                    $(this).attr('src', animate);
+                    $(this).attr('data-state', 'animate')
+                } else if (state = 'animate') {
+                    $(this).attr('src', still);
+                    $(this).attr('data-state', 'still')
+                }
+            });
         });
     }); // End of $('.gifBtn').click(function()
 
+
+    /*
     $('.gif').click(function() {
         console.log("stop it");
         var state = $(this).attr('data-state');
@@ -73,7 +90,7 @@ $(document).ready(function() {
     });
 
 
-
+*/
 
 
 
