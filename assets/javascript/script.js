@@ -25,9 +25,9 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
                 gifDiv.addClass('floater');
 
                 var gameGif = $('<img>')
-                gameGif.attr('src', results[i].images.fixed_width_still.url);
-                gameGif.attr('data-still', results[i].images.fixed_width_still.url);
-                gameGif.attr('data-animated', results[i].images.fixed_width.url);
+                gameGif.attr('src', results[i].images.original_still.url);
+                gameGif.attr('data-still', results[i].images.original_still.url);
+                gameGif.attr('data-animated', results[i].images.original.url);
                 gameGif.attr('data-state', 'still');
                 gameGif.addClass('gif');
                 gifDiv.append(gameGif);
@@ -76,7 +76,7 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
     $('#submitBtn').click(function(){
         var input = $('#userInput').val().trim();
         topics.push(input);
-        $('#form').children('#userInput').val('')
+        $('.form-group').children('#userInput').val('')
 
 // The buttons are rendered again with the user's input
         renderButtons();
