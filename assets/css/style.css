@@ -1,3 +1,40 @@
 * {
     box-sizing: border-box;
   }
+
+body {
+  background-image: url(../images/bg.png);
+  background-repeat: repeat;
+  font-size: 16px;
+  color: #303030;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: rgb(255, 255, 255, .56);
+}
+
+.container {
+  max-width: 80%;
+}
+
+.btnSection {
+  background-color: rgb(255, 255, 255, .6);
+  padding: 20px;
+}
+
+.btn {
+  background-color: white;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+#form {
+  margin-top: 20px;
+  margin-left: 20px;
+ 
+}
+
+.floater {
+  float: left;
+}

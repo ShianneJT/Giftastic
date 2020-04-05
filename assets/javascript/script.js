@@ -22,17 +22,19 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
     // A rating is pulled from the response and added below the image then appends the divs to the gifsView div already on index.html
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $('<div>');
+                gifDiv.addClass('floater');
+                
                 var gameGif = $('<img>')
-
-                gameGif.attr('src', results[i].images.downsized_still.url);
-                gameGif.attr('data-still', results[i].images.downsized_still.url);
-                gameGif.attr('data-animated', results[i].images.downsized.url);
+                gameGif.attr('src', results[i].images.fixed_width_still.url);
+                gameGif.attr('data-still', results[i].images.fixed_width_still.url);
+                gameGif.attr('data-animated', results[i].images.fixed_width.url);
                 gameGif.attr('data-state', 'still');
                 gameGif.addClass('gif');
                 gifDiv.append(gameGif);
 
                 var rating = results[i].rating;
                 var ratingText = $('<p>').text(`Rating: ${rating}`);
+
                 gifDiv.append(ratingText);
 
                 $('#gifsView').append(gifDiv);
@@ -48,7 +50,7 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
         for (var i = 0; i < topics.length; i++) {
             var button = $('<button>');
             button.text(topics[i]);
-            button.addClass('gifBtn');
+            button.addClass('gifBtn btn btn-outline-secondary');
             button.attr('data-name', topics[i]);
             $('#buttonsView').append(button);
         };

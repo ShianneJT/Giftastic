@@ -9,29 +9,34 @@
     <title>GifTastic!</title>
 </head>
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Video Game Gif Search!</h1>
-        </div>
 
+<div class="container">
+    <div class="jumbotron">
+        <h1>Video Game Gif Search!</h1>
+    </div>
+
+    <div class="btnSection">
+    <!-- Buttons -->
         <div class="row">
             <div id="buttonsView" class="col-lg-12"></div>
         </div>
+    <!-- Form -->
         <div class="row form-group">
             <form>
                 <div class="form-group" id="form">
-                    <label for="userInput">Enter the title of a video game: </label><br>
+                    <label for="userInput"><h4>Enter the title of a video game: </h4></label><br>
                     <input type="text" id="userInput" placeholder="Super Mario">
-                    <input type="submit" id="submitBtn" value="Submit!" class="btn-default">
+                    <input type="submit" id="submitBtn" value="Submit!" class="btn btn-outline-secondary">
                 </div>
             </form>
         </div>
-
+    
+    <!-- Gifs appear here -->
         <div class="row">
             <div class="col-lg-12" id="gifsView"></div>
         </div>
-
-    </div> <!-- End of container -->
+    </div> <!-- End of button section -->
+</div> <!-- End of container -->
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="assets/javascript/script.js"></script>
