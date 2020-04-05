@@ -23,7 +23,7 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
             for (var i = 0; i < results.length; i++) {
                 var gifDiv = $('<div>');
                 gifDiv.addClass('floater');
-                
+
                 var gameGif = $('<img>')
                 gameGif.attr('src', results[i].images.fixed_width_still.url);
                 gameGif.attr('data-still', results[i].images.fixed_width_still.url);
