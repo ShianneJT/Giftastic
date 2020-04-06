@@ -7,7 +7,7 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
     // Empties container holding gifs, if any, to display the topics from the button that was pressed
     // Sets videoGame to equal the data-name attribute assigned when the buttons are created
     // ajax call to giphy api that limits the search to 10 results
-        $('#gifsView').empty();  
+        $('#gifsView').empty();
         var videoGame = $(this).attr('data-name');
         var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + videoGame + '&api_key=LO0wlQcDyKguVdmxVhn7CHeqlHgGIazS&limit=10';
 
@@ -24,7 +24,7 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
                 var gifDiv = $('<div>');
                 gifDiv.addClass('floater');
 
-                var gameGif = $('<img>')
+                var gameGif = $('<img>');
                 gameGif.attr('src', results[i].images.original_still.url);
                 gameGif.attr('data-still', results[i].images.original_still.url);
                 gameGif.attr('data-animated', results[i].images.original.url);
@@ -33,7 +33,7 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
                 gifDiv.append(gameGif);
 
                 var rating = results[i].rating;
-                var ratingText = $('<p>').text(`Rating: ${rating}`);
+                var ratingText = $('<p>').addClass('text-border').text(`Rating: ${rating}`);
 
                 gifDiv.append(ratingText);
 
@@ -50,7 +50,7 @@ var topics = ['Animal Crossing', 'Red Dead Redemption 2', 'The Witcher 3', 'DOOM
         for (var i = 0; i < topics.length; i++) {
             var button = $('<button>');
             button.text(topics[i]);
-            button.addClass('gifBtn btn btn-outline-secondary');
+            button.addClass('gifBtn btn btn-outline-secondary capitalize');
             button.attr('data-name', topics[i]);
             $('#buttonsView').append(button);
         };

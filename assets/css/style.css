@@ -5,8 +5,8 @@
 body {
   background-image: url(../images/bg.png);
   background-repeat: repeat;
-  font-size: 20px;
   letter-spacing: 3px;
+  font-size: 22px;
   color: #BB94F2;
 }
 
@@ -15,10 +15,14 @@ body {
   min-width: 480px;
 }
 
+.text-border {
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 /* Header */
 .jumbotron {
   background-color: rgb(255, 255, 255, .56);
-  text-shadow: 4px 3px 3px #000000;
   display: flex;
   height: 100px;
   justify-content: center;
@@ -62,16 +66,7 @@ body {
   margin-left: 10px;
 }
 
-#form {
-  font-size: 26px;
-  font-weight: bold;
-  text-shadow: 3px 3px 3px #000000;
-}
-
-p {
-  font-weight: bold;
-  text-shadow: 3px 3px 3px #000000;
-}
+/* Gifs */
 
 #gifsView {
   display: flex;
