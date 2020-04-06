@@ -6,8 +6,9 @@ body {
   background-image: url(../images/bg.png);
   background-repeat: repeat;
   letter-spacing: 3px;
-  font-size: 22px;
+  font-size: 20px;
   color: #BB94F2;
+  font-family: 'Fredoka One', cursive;
 }
 
 .container {
@@ -63,11 +64,10 @@ body {
 
 /* Form */
 .form-group {
-  margin-left: 10px;
+  margin-left: 15px;
 }
 
 /* Gifs */
-
 #gifsView {
   display: flex;
   flex-direction: row;
