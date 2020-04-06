@@ -1,10 +1,10 @@
-# GifTastic!
+# GifTastic
 
 A web based application that uses the GIPHY API to display the gifs based on the topic of the user's choice.
 
 - [https://shiannejt.github.io/Giftastic/]("https://shiannejt.github.io/Giftastic/")
 
-# Technologies Used
+## Technologies Used
 
 - AJAX
 - GIPHY API
@@ -14,7 +14,7 @@ A web based application that uses the GIPHY API to display the gifs based on the
 - CSS
 - HTML
 
-# To-do
+### To-do
 
 - [ ] Improve mobile responsiveness
 - [ ] Ability to add more than ten gifs
